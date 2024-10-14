@@ -6,7 +6,8 @@ import { ChangeEvent, FormEvent, useEffect, useRef } from "react"
 import { toast } from "react-hot-toast"
 import { useLocation, useNavigate } from "react-router-dom"
 import { v4 as uuidv4 } from "uuid"
-import logo from "@/assets/logo.svg"
+// import logo from "@/assets/logo.svg"
+// import { MdMargin } from "react-icons/md"
 
 const FormComponent = () => {
     const location = useLocation()
@@ -90,7 +91,10 @@ const FormComponent = () => {
 
     return (
         <div className="flex w-full max-w-[500px] flex-col items-center justify-center gap-4 p-4 sm:w-[500px] sm:p-8">
-            <img src={logo} alt="Logo" className="w-full"/>
+            <div className="w-full text-center font-bold">
+                CC CODE EDITOR GROUP 5
+            </div>
+
             <form onSubmit={joinRoom} className="flex w-full flex-col gap-4">
                 <input
                     type="text"
@@ -111,10 +115,11 @@ const FormComponent = () => {
                 />
                 <button
                     type="submit"
-                    className="mt-2 w-full rounded-md bg-primary px-8 py-3 text-lg font-semibold text-black"
+                    className="mt-2 w-full rounded-md bg-blue-500 px-8 py-3 text-lg font-semibold text-black"
                 >
                     Join
                 </button>
+
             </form>
             <button
                 className="cursor-pointer select-none underline"

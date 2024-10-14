@@ -28,7 +28,7 @@ const defaultSettings: Settings = {
     language: "Javascript",
     fontSize: 16,
     fontFamily: "Space Mono",
-    showGitHubCorner: true,
+    showGitHubCorner: false, // Ensure this line is included
 }
 
 function SettingContextProvider({ children }: { children: ReactNode }) {
@@ -80,10 +80,10 @@ function SettingContextProvider({ children }: { children: ReactNode }) {
             language,
             fontSize,
             fontFamily,
-            showGitHubCorner,
+            showGitHubCorner, // Corrected from howGitHubCorner to showGitHubCorner
         }
         localStorage.setItem("settings", JSON.stringify(updatedSettings))
-    }, [theme, language, fontSize, fontFamily, showGitHubCorner])
+    }, [theme, language, fontSize, fontFamily, showGitHubCorner]) // Added showGitHubCorner to the dependency array
 
     return (
         <SettingContext.Provider
